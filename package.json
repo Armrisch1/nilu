@@ -4,13 +4,14 @@
     "description": "nliu",
     "main": "index.js",
     "scripts": {
-      "watch": "sass --watch assets/css/style.scss assets/css/style.css",
-      "test": "echo \"Error: no test specified\" && exit 1"
+        "watch": "sass --watch assets/css/style.scss assets/css/style.css",
+        "test": "echo \"Error: no test specified\" && exit 1"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "dependencies": {
-      "sass": "^1.71.1"
+        "sass": "^1.77.0",
+        "swiper": "^11.1.1"
     }
-  }
+}
