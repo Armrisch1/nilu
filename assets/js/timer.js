@@ -3,16 +3,19 @@ const days = document.querySelector('#days');
 const hours = document.querySelector('#hours');
 const minutes = document.querySelector('#minutes');
 const seconds = document.querySelector('#seconds');
-// const countdown = document.querySelector('#countdown');
-// const preloader = document.querySelector('#preloader');
 
-// Делаем расчеты
+// Calculations
 const currentYear = new Date().getFullYear(); // 2020
 const nextYear = new Date(`August 24 ${currentYear} 00:00:00`);
 
-// Устанавливаем год на страницу
+// Set year
 year.innerText = currentYear + 1;
 
+/**
+ * Calculates and updates countdown data in header
+ * @method updateCounter
+ * @returns void
+ * */
 function updateCounter() {
 	const currentTime = new Date();
 	const diff = nextYear - currentTime;
@@ -28,9 +31,5 @@ function updateCounter() {
 	seconds.innerText = secondsLeft < 10 ? '0' + secondsLeft : secondsLeft;
 }
 
+// Run timer
 setInterval(updateCounter, 1000);
-
-// setTimeout(function () {
-//     preloader.remove();
-//     countdown.style.display = 'flex';
-// }, 1000);

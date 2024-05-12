@@ -1,11 +1,11 @@
 const swiper = new Swiper('.swiper-container', {
-    loop: true, // Включает бесконечный цикл
+    loop: true,
     pagination: {
-        el: '.swiper-pagination', // Пагинация
-        clickable: true, // Возможность клика по точкам пагинации
+        el: '.swiper-pagination',
+        clickable: true
     },
     navigation: {
-        nextEl: '.swiper-button-next', // Кнопка "следующий"
-        prevEl: '.swiper-button-prev', // Кнопка "предыдущий"
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
     },
 });
