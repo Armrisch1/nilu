@@ -1,13 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nilu</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js" type="text/javascript"></script> -->
+
 </head>
+
 <body>
     <header>
-        
+        <img class="main_section-logo" src="assets/images/Nilu_logo.svg" alt="logo_nilu">
+        <p class="main_section-text-info">Unveiling during Monterey Car week at Pobble Beach Inc</p>
+        <div class="main_section-video-box">
+            <video class="main_section-video" autoplay loop>
+                <source src="assets/videos/nilu_desktop.mp4">
+            </video>
+        </div>
+        <div class="main_section-timer">
+            <div id="year" class="year" style="display: none;"></div>
+            <div class="countdown" id=countdown>
+                <div class="time" >
+                    <h2 id="days">00</h2>
+                    <small>Days</small>
+                </div>
+                <div class="time">
+                    <h2 id="hours">00</h2>
+                    <span>.</span>
+                    <small>Hours</small>
+                </div>
+                <div class="time">
+                    <h2 id="minutes">00</h2>
+                    <span>:</span>
+
+                    <small>Minutes</small>
+                </div>
+                <div class="time">
+                    <h2 id="seconds">00</h2>
+                    <span>:</span>
+
+                    <small>Seconds</small>
+                </div>
+            </div>
+        </div>
     </header>
+    <!-- <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">Slide 1</div>
+          <div class="swiper-slide">Slide 2</div>
+          <div class="swiper-slide">Slide 3</div>
+          ...
+        </div>
+        <div class="swiper-pagination"></div>
+      
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      
+        <div class="swiper-scrollbar"></div>
+      </div> -->
+
+
+
+    <script src="assets/js/timer.js"></script>
 </body>
+
 </html>
