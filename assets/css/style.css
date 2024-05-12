@@ -24,7 +24,7 @@
 }
 
 :root {
-  --index: calc(0.5vw + 0.5vh);
+  --index: calc(1vw + 1vh);
 }
 
 body {
