@@ -11,47 +11,87 @@ const swiper = new Swiper('.swiper-container', {
 });
 
 const divVideo = document.querySelector('.main_section-video-box')
-const video = document.createElement('video')
-const videoSource = document.createElement('source')
+const video = document.querySelector('video')
+// const videoSource = document.createElement('source')
 divVideo.appendChild(video)
-video.appendChild(videoSource)
-video.setAttribute("muted", "muted")
-video.setAttribute("autoplay", "autoplay")
+// video.appendChild(videoSource)
+// video.setAttribute("mute", "mute")
+// video.setAttribute("autoplay", "autoplay")
 video.classList.add("main_section-video")
-videoSource.setAttribute("src", "assets/videos/01 1920x1080/1920x1080_mq.mp4")
 
-if(window.matchMedia("(max-width: 1920px)").matches) {
-    videoSource.setAttribute("src", "assets/videos/01 1920x1080/1920x1080_mq.mp4")
+// if (window.matchMedia("(max-width: 1920px)").matches) {
+//     video.setAttribute("src", "assets/videos/01 1920x1080/1920x1080_mq.mp4")
+// }
+
+// if (window.matchMedia("(max-width: 1680px)").matches) {
+//     video.setAttribute("src", "assets/videos/02 1680x1050/1680x1050_hq.mp4")
+// }
+
+// if (window.matchMedia("(max-width: 1600px)").matches) {
+//     video.setAttribute("src", "assets/videos/03 1600x1024/1600x1024_mq.mp4")
+// }
+
+// if (window.matchMedia("(max-width: 1440px)").matches) {
+//     video.setAttribute("src", "assets/videos/04 1440x1080/1440x1080_mq.mp4")
+// }
+
+// if (window.matchMedia("(max-width: 1366px)").matches) {
+//     video.setAttribute("src", "assets/videos/06 1366x768/1366x768_mq.mp4")
+// }
+
+// if (window.matchMedia("(max-width: 1280px)").matches) {
+//     video.setAttribute("src", "assets/videos/07 1280x1024/1280x1024_mq.mp4")
+// }
+
+// if (window.matchMedia("(max-width: 1024px)").matches) {
+//     video.setAttribute("src", "assets/videos/10 1024x1366/1024x1366_mq.mp4")
+// }
+
+// if (window.matchMedia("(max-width: 632px)").matches) {
+//     video.setAttribute("src", "assets/videos/11 632x800/632x800_mq.mp4")
+// }
+
+// if (window.matchMedia("(max-width: 375px)").matches) {
+//     video.setAttribute("src", "assets/videos/13 375x667/375x667_mq.mp4")
+// }
+
+
+function setVideoSource() {
+    if (window.matchMedia("(max-width: 375px)").matches) {
+        video.setAttribute("src", "assets/videos/13 375x667/375x667_mq.mp4")
+    } else if (window.matchMedia("(max-width: 632px)").matches) {
+        video.setAttribute("src", "assets/videos/11 632x800/632x800_mq.mp4")
+    } else if (window.matchMedia("(max-width: 1024px)").matches) {
+        video.setAttribute("src", "assets/videos/10 1024x1366/1024x1366_mq.mp4")
+    } else if (window.matchMedia("(max-width: 1280px)").matches) {
+        video.setAttribute("src", "assets/videos/07 1280x1024/1280x1024_mq.mp4")
+    } else if (window.matchMedia("(max-width: 1366px)").matches) {
+        video.setAttribute("src", "assets/videos/06 1366x768/1366x768_mq.mp4")
+    } else if (window.matchMedia("(max-width: 1440px)").matches) {
+        video.setAttribute("src", "assets/videos/04 1440x1080/1440x1080_mq.mp4")
+    } else if (window.matchMedia("(max-width: 1600px)").matches) {
+        video.setAttribute("src", "assets/videos/03 1600x1024/1600x1024_mq.mp4")
+    } else if (window.matchMedia("(max-width: 1680px)").matches) {
+        video.setAttribute("src", "assets/videos/02 1680x1050/1680x1050_mq.mp4")
+    } else if (window.matchMedia("(max-width: 1920px)").matches) {
+        video.setAttribute("src", "assets/videos/01 1920x1080/1920x1080_mq.mp4")
+    } else {
+        video.setAttribute("src", "assets/videos/01 1920x1080/1920x1080_mq.mp4")
+    }
 }
 
-if(window.matchMedia("(max-width: 1680px)").matches) {
-    videoSource.setAttribute("src", "assets/videos/02 1680x1050/1680x1050_mq.mp4")
-}
 
-if(window.matchMedia("(max-width: 1600px)").matches) {
-    videoSource.setAttribute("src", "assets/videos/03 1600x1024/1600x1024_mq.mp4")
-}
+setVideoSource()
 
-if(window.matchMedia("(max-width: 1440px)").matches) {
-    videoSource.setAttribute("src", "assets/videos/04 1440x1080/1440x1080_mq.mp4")
-}
+// btn down
+const btn = document.querySelector(".header_btn-down")
+btn.addEventListener("click", () => {
+    window.scrollTo(0,document.body.scrollHeight);
 
-if(window.matchMedia("(max-width: 1366px)").matches) {
-    videoSource.setAttribute("src", "assets/videos/06 1366x768/1366x768_mq.mp4")
-}
+})
 
-if(window.matchMedia("(max-width: 1280px)").matches) {
-    videoSource.setAttribute("src", "assets/videos/07 1280x1024/1280x1024_mq.mp4")
-}
+// loader on
 
-if(window.matchMedia("(max-width: 1024px)").matches) {
-    videoSource.setAttribute("src", "assets/videos/10 1024x1366/1024x1366_mq.mp4")
-}
-
-if(window.matchMedia("(max-width: 632px)").matches) {
-    videoSource.setAttribute("src", "assets/videos/11 632x800/632x800_mq.mp4")
-}
-
-if(window.matchMedia("(max-width: 375px)").matches) {
-    videoSource.setAttribute("src", "assets/videos/13 375x667/375x667_mq.mp4")
-}
+video.addEventListener('loadeddata', () => {
+    // loader off
+})
