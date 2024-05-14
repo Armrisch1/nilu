@@ -59,6 +59,8 @@ video.classList.add("main_section-video")
 function setVideoSource() {
     if (window.matchMedia("(max-width: 375px)").matches) {
         video.setAttribute("src", "assets/videos/13 375x667/375x667_mq.mp4")
+    } else if (window.matchMedia("(max-width: 430px)").matches) {
+        video.setAttribute("src", "assets/videos/12 430x932 (temporary)/430х932_mq_temporary.mp4")
     } else if (window.matchMedia("(max-width: 632px)").matches) {
         video.setAttribute("src", "assets/videos/11 632x800/632x800_mq.mp4")
     } else if (window.matchMedia("(max-width: 1024px)").matches) {
@@ -102,4 +104,5 @@ for (let smoothLink of btnDown) {
 
 video.addEventListener('loadeddata', () => {
     // loader off
+
 })
