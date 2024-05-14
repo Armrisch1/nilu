@@ -84,11 +84,19 @@ function setVideoSource() {
 setVideoSource()
 
 // btn down
-const btn = document.querySelector(".header_btn-down")
-btn.addEventListener("click", () => {
-    window.scrollTo(0,document.body.scrollHeight);
 
-})
+const btnDown = document.querySelectorAll("a[href^='#']");
+for (let smoothLink of btnDown) {
+    smoothLink.addEventListener("click", function (e) {
+        e.preventDefault();
+        const id = smoothLink.getAttribute("href");
+
+        document.querySelector(id).scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+    });
+};
 
 // loader on
 
