@@ -321,12 +321,12 @@ header .header_btn-down {
   }
   header small {
     padding-inline-end: 30px !important;
-    bottom: 140px !important;
+    bottom: 170px !important;
     font-size: 12px !important;
   }
   header .sec {
     padding-inline-end: 20px !important;
-    bottom: 30px !important;
+    bottom: 50px !important;
   }
   header span {
     top: 0px !important;
