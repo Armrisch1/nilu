@@ -69,5 +69,7 @@ for (let smoothLink of btnDown) {
 
 video.addEventListener('loadeddata', () => {
     // loader off
-
+    
+        let preloader = document.getElementById('preload');
+        preloader.style.display = 'none';
 })
