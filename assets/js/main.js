@@ -82,10 +82,10 @@ $('#nilu_contact_form').on("submit", function (e){
     }
 
     const formData = new FormData();
-    formData.append('name', name);
-    formData.append('email', email);
-    formData.append('subject', subject);
-    formData.append('message', message);
+    formData.append('name', name.val());
+    formData.append('email', email.val());
+    formData.append('subject', subject.val());
+    formData.append('message', message.val());
 
     const method = this.method;
     const action = this.action;
