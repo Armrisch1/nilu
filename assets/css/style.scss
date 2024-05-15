@@ -335,12 +335,10 @@ header {
     .countdown {
       font-size: calc(var(--index) * 2.9) !important;
       width: calc(var(--index) * 29) !important;
+      padding-top: 10px;
       padding-left: 20px;
       height: 250px !important;
-      // h2 {
-      //   margin-inline: calc(var(--index) * 2.5) !important;
 
-      // }
     }
     small {
       padding-inline-end: 50px !important;
@@ -363,7 +361,7 @@ header {
       }
     }
     .countdown {
-      font-size: calc(var(--index) * 2.6) !important;
+      font-size: calc(var(--index) * 2.4) !important;
       width: calc(var(--index) * 26) !important;
       flex-wrap: wrap;
       padding-top: 10px;
