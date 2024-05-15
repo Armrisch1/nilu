@@ -87,7 +87,7 @@ $('#nilu_contact_form').on("submit", function (e){
     formData.append('subject', subject.val());
     formData.append('message', message.val());
 
-    const method = this.method;
+    const form = this;
     const action = this.action;
 
     $.ajax({
@@ -98,6 +98,7 @@ $('#nilu_contact_form').on("submit", function (e){
         contentType: false,
         success: function(response) {
             console.log('Success:', response);
+            form.reset();
             alert(response);
         },
         error: function(xhr, status, error) {
