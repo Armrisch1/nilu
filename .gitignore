@@ -1,1 +1,5 @@
 node_modules
+server/composer.lock
+server/vendor
+.idea
+.idea/vcs.xml

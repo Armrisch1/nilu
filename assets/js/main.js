@@ -15,7 +15,6 @@ const video = document.querySelector('video')
 divVideo.appendChild(video)
 video.classList.add("main_section-video")
 
-
 function setVideoSource() {
     if (window.matchMedia("(max-width: 375px)").matches) {
         video.setAttribute("src", "assets/videos/13 375x667/375x667_mq.mp4")
@@ -48,9 +47,7 @@ function setVideoSource() {
     }
 }
 
-setVideoSource()
-
-// btn down
+setVideoSource();
 
 const btnDown = document.querySelectorAll("a[href^='#']");
 for (let smoothLink of btnDown) {
@@ -65,11 +62,47 @@ for (let smoothLink of btnDown) {
     });
 };
 
-// loader on
-
 video.addEventListener('loadeddata', () => {
-    // loader off
-    
-        let preloader = document.getElementById('preload');
-        preloader.style.display = 'none';
-})
+    let preloader = document.getElementById('preload');
+    preloader.style.display = 'none';
+});
+
+
+$('#nilu_contact_form').on("submit", function (e){
+    e.preventDefault();
+
+    const name = $('[name="name"]');
+    const email = $('[name="email"]');
+    const subject = $('[name="subject"]');
+    const message = $('[name="subject"]');
+
+    if (!name.val().length || !email.val().length || !subject.val().length || !message.val().length){
+        alert('Please fill in all fields');
+        return;
+    }
+
+    // Collect form data
+    const formData = {
+        name: name.val(),
+        email: email.val(),
+        subject: subject.val(),
+        message: message.val()
+    };
+    const method = this.method;
+    const action = this.action;
+
+    $.ajax({
+        url: action,
+        type: method,
+        contentType: 'application/json',
+        data: JSON.stringify(formData),
+        success: function(response) {
+            console.log('Success:', response);
+            alert(response);
+        },
+        error: function(xhr, status, error) {
+            console.error('Error:', error);
+            alert('An error occurred while submitting the form.');
+        }
+    });
+});
