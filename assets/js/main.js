@@ -93,16 +93,15 @@ $('#nilu_contact_form').on("submit", function (e){
 
     $.ajax({
         url: action,
-        type: method,
-        contentType: 'application/json',
-        data: JSON.stringify(formData),
+        type: 'POST',
+        data: formData,
         success: function(response) {
             console.log('Success:', response);
             alert(response);
         },
         error: function(xhr, status, error) {
             console.error('Error:', error);
-            alert('An error occurred while submitting the form.');
+            alert(`An error occurred while submitting the form. ${error.message}`);
         }
     });
 });
