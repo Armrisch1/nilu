@@ -6,7 +6,7 @@ const seconds = document.querySelector('#seconds');
 
 // Calculations
 const currentYear = new Date().getFullYear(); // 2020
-const nextYear = new Date(`August 24 ${currentYear} 00:00:00`);
+const nextYear = new Date(`August 15 ${currentYear} 15:00:00`);
 
 // Set year
 year.innerText = currentYear + 1;
