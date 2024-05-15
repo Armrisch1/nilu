@@ -74,7 +74,7 @@ $('#nilu_contact_form').on("submit", function (e){
     const name = $('[name="name"]');
     const email = $('[name="email"]');
     const subject = $('[name="subject"]');
-    const message = $('[name="subject"]');
+    const message = $('[name="message"]');
 
     if (!name.val().length || !email.val().length || !subject.val().length || !message.val().length){
         alert('Please fill in all fields');
@@ -94,6 +94,8 @@ $('#nilu_contact_form').on("submit", function (e){
         url: action,
         type: 'POST',
         data: formData,
+        processData: false,
+        contentType: false,
         success: function(response) {
             console.log('Success:', response);
             alert(response);
