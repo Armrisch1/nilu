@@ -94,6 +94,8 @@ $('#nilu_contact_form').on("submit", function (e){
         url: action,
         type: 'POST',
         data: formData,
+        processData: false,
+        contentType: false,
         success: function(response) {
             console.log('Success:', response);
             form.reset();
