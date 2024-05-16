@@ -68,43 +68,46 @@ video.addEventListener('loadeddata', () => {
 });
 
 
-$('#nilu_contact_form').on("submit", function (e){
+document.getElementById('nilu_contact_form').addEventListener('submit', function(e) {
     e.preventDefault();
 
-    const name = $('[name="name"]');
-    const email = $('[name="email"]');
-    const subject = $('[name="subject"]');
-    const message = $('[name="message"]');
+    const name = document.querySelector('[name="name"]');
+    const email = document.querySelector('[name="email"]');
+    const subject = document.querySelector('[name="subject"]');
+    const message = document.querySelector('[name="message"]');
 
-    if (!name.val().length || !email.val().length || !subject.val().length || !message.val().length){
+    if (!name.value || !email.value || !subject.value || !message.value) {
         alert('Please fill in all fields');
         return;
     }
 
     const formData = new FormData();
-    formData.append('name', name.val());
-    formData.append('email', email.val());
-    formData.append('subject', subject.val());
-    formData.append('message', message.val());
+    formData.append('name', name.value);
+    formData.append('email', email.value);
+    formData.append('subject', subject.value);
+    formData.append('message', message.value);
 
     const form = this;
     const action = this.action;
 
-    $.ajax({
-        url: action,
-        type: 'POST',
-        data: formData,
-        processData: false,
-        contentType: false,
-        success: function(response) {
-            console.log('Success:', response);
+    fetch(action, {
+        method: 'POST',
+        body: formData
+    })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok ' + response.statusText);
+            }
+            return response.text(); // or response.json() if the response is JSON
+        })
+        .then(data => {
+            console.log('Success:', data);
             form.reset();
-            alert(response);
-        },
-        error: function(xhr, status, error) {
+            alert(data);
+        })
+        .catch(error => {
             console.error('Error:', error);
             form.reset();
             alert(`An error occurred while submitting the form. ${error.message}`);
-        }
-    });
+        });
 });
