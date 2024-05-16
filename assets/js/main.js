@@ -68,43 +68,43 @@ video.addEventListener('loadeddata', () => {
 });
 
 
-$('#nilu_contact_form').on("submit", function (e){
-    e.preventDefault();
-
-    const name = $('[name="name"]');
-    const email = $('[name="email"]');
-    const subject = $('[name="subject"]');
-    const message = $('[name="message"]');
-
-    if (!name.val().length || !email.val().length || !subject.val().length || !message.val().length){
-        alert('Please fill in all fields');
-        return;
-    }
-
-    const formData = new FormData();
-    formData.append('name', name.val());
-    formData.append('email', email.val());
-    formData.append('subject', subject.val());
-    formData.append('message', message.val());
-
-    const form = this;
-    const action = this.action;
-
-    $.ajax({
-        url: action,
-        type: 'POST',
-        data: formData,
-        processData: false,
-        contentType: false,
-        success: function(response) {
-            console.log('Success:', response);
-            form.reset();
-            alert(response);
-        },
-        error: function(xhr, status, error) {
-            console.error('Error:', error);
-            form.reset();
-            alert(`An error occurred while submitting the form. ${error.message}`);
-        }
-    });
-});
+// $('#nilu_contact_form').on("submit", function (e){
+//     e.preventDefault();
+//
+//     const name = $('[name="name"]');
+//     const email = $('[name="email"]');
+//     const subject = $('[name="subject"]');
+//     const message = $('[name="message"]');
+//
+//     if (!name.val().length || !email.val().length || !subject.val().length || !message.val().length){
+//         alert('Please fill in all fields');
+//         return;
+//     }
+//
+//     const formData = new FormData();
+//     formData.append('name', name.val());
+//     formData.append('email', email.val());
+//     formData.append('subject', subject.val());
+//     formData.append('message', message.val());
+//
+//     const form = this;
+//     const action = this.action;
+//
+//     $.ajax({
+//         url: action,
+//         type: 'POST',
+//         data: formData,
+//         processData: false,
+//         contentType: false,
+//         success: function(response) {
+//             console.log('Success:', response);
+//             form.reset();
+//             alert(response);
+//         },
+//         error: function(xhr, status, error) {
+//             console.error('Error:', error);
+//             form.reset();
+//             alert(`An error occurred while submitting the form. ${error.message}`);
+//         }
+//     });
+// });

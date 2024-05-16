@@ -1,26 +1,8 @@
 <?php
-$allowed_domains = ['https://nilu27.com'];
+header('Access-Control-Allow-Origin: https://example.com');
+header('Access-Control-Allow-Methods: GET, POST');
+header("Access-Control-Allow-Headers: X-Requested-With");
 
-if(isset($_SERVER["HTTP_ORIGIN"])) {
-    header("Access-Control-Allow-Origin: {$_SERVER['HTTP_ORIGIN']}");
-} else {
-    header("Access-Control-Allow-Origin: *");
-}
-
-header("Access-Control-Allow-Credentials: true");
-header("Access-Control-Max-Age: 600");
-
-if($_SERVER["REQUEST_METHOD"] == "OPTIONS")
-{
-    if (isset($_SERVER["HTTP_ACCESS_CONTROL_REQUEST_METHOD"]))
-        header("Access-Control-Allow-Methods: POST, GET, OPTIONS, DELETE, PUT"); //Make sure you remove those you do not want to support
-
-    if (isset($_SERVER["HTTP_ACCESS_CONTROL_REQUEST_HEADERS"]))
-        header("Access-Control-Allow-Headers: {$_SERVER['HTTP_ACCESS_CONTROL_REQUEST_HEADERS']}");
-
-    //Just exit with 200 OK with the above headers for OPTIONS method
-    exit(0);
-}
 
 require "vendor/autoload.php";
 use PHPMailer\PHPMailer\PHPMailer;
