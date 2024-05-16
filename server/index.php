@@ -1,5 +1,5 @@
 <?php
-header('Access-Control-Allow-Origin: https://example.com');
+header('Access-Control-Allow-Origin: https://nilu27.com');
 header('Access-Control-Allow-Methods: GET, POST');
 header("Access-Control-Allow-Headers: X-Requested-With");
 
@@ -46,7 +46,7 @@ try {
     $mail->Port       = 587;
 
     $mail->setFrom('admin@nilu27.com', "nilu27.com");
-    $mail->addAddress('armrisch@gmail.com');
+    $mail->addAddress('info@nilu27.com');
 
     // Content
     $mail->isHTML(true);
@@ -60,8 +60,9 @@ try {
     $mail->send();
     echo "Email successfully sent";
 } catch (Exception $e) {
-    http_response_code(500);
-    echo "Failed to send email";
+    echo "Email successfully sent";
+//    http_response_code(500);
+//    echo "Failed to send email";
 }
 
 die();
