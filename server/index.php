@@ -1,7 +1,19 @@
 <?php
-header('Access-Control-Allow-Origin: https://nilu27.com');
-header('Access-Control-Allow-Methods: POST');
-header("Access-Control-Allow-Headers: X-Requested-With");
+$allowed_domains = ['https://nilu27.com'];
+
+// Check if the Origin header is set and is in the list of allowed domains
+if (isset($_SERVER['HTTP_ORIGIN']) && in_array($_SERVER['HTTP_ORIGIN'], $allowed_domains)) {
+    header('Access-Control-Allow-Origin: ' . $_SERVER['HTTP_ORIGIN']);
+    header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
+    header('Access-Control-Allow-Headers: X-Requested-With, Content-Type');
+    header('Access-Control-Allow-Credentials: true');
+}
+
+// Handle preflight requests (OPTIONS method)
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    http_response_code(200);
+    exit();
+}
 
 require "vendor/autoload.php";
 use PHPMailer\PHPMailer\PHPMailer;
