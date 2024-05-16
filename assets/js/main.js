@@ -76,34 +76,35 @@ $('#nilu_contact_form').on("submit", function (e){
     const subject = $('[name="subject"]');
     const message = $('[name="message"]');
 
-    if (!name.val().length || !email.val().length || !subject.val().length || !message.val().length){
+    if (!name.val().trim() || !email.val().trim() || !subject.val().trim() || !message.val().trim()){
         alert('Please fill in all fields');
         return;
     }
 
-    const formData = new FormData();
-    formData.append('name', name.val());
-    formData.append('email', email.val());
-    formData.append('subject', subject.val());
-    formData.append('message', message.val());
+    const formData = {
+        name: name.val(),
+        email: email.val(),
+        subject: subject.val(),
+        message: message.val()
+    };
 
     const form = this;
-    const action = this.action;
+    const action = this.action || '/mailer/send';
 
     $.ajax({
         url: action,
         type: 'POST',
-        data: formData,
-        processData: false,
-        contentType: false,
+        data: JSON.stringify(formData),
+        contentType: 'application/json',
         success: function(response) {
             console.log('Success:', response);
             form.reset();
-            alert(response);
+            alert('Email sent successfully');
         },
         error: function(xhr, status, error) {
             console.error('Error:', error);
-            alert(`An error occurred while submitting the form. ${error.message}`);
+            form.reset();
+            alert('Failed to send email. Please try again later.');
         }
     });
 });
