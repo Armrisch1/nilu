@@ -73,6 +73,7 @@ header .main_section-text-info {
   left: 50%;
   transform: translateX(-50%);
   top: calc(var(--index) * 3.2);
+  text-align: center;
 }
 header .main_section-timer small {
   font-size: 20px;
@@ -145,6 +146,7 @@ body {
 
 .time {
   position: relative;
+  height: max-content !important;
 }
 .time small {
   left: 8px;
@@ -353,8 +355,8 @@ body {
     height: 220px !important;
   }
   header .countdown span {
-    top: -20px !important;
-    font-size: calc(var(--index) * 7) !important;
+    top: -11px !important;
+    font-size: 125px !important;
   }
   header small {
     padding-inline-end: 50px !important;
@@ -394,8 +396,8 @@ body {
     height: 250px !important;
   }
   header .countdown span {
-    top: -30px !important;
-    font-size: calc(var(--index) * 10) !important;
+    top: -25px !important;
+    font-size: 170px !important;
   }
   header small {
     padding-inline-end: 50px !important;
@@ -409,9 +411,9 @@ body {
     height: 250px !important;
   }
   header .countdown span {
-    top: -20px !important;
-    font-size: calc(var(--index) * 7) !important;
-    margin-left: -60px !important;
+    top: -12px !important;
+    font-size: 97px !important;
+    margin-left: -52px !important;
   }
   header small {
     padding-inline-end: 50px !important;
@@ -462,7 +464,7 @@ body {
 }
 @media screen and (max-width: 632px) {
   header .countdown {
-    font-size: calc(var(--index) * 4) !important;
+    font-size: 65px !important;
     width: calc(var(--index) * 35) !important;
     height: 250px !important;
   }
@@ -472,9 +474,9 @@ body {
     font-size: 12px !important;
   }
   header span {
-    top: -10px !important;
-    font-size: calc(var(--index) * 4.5) !important;
-    margin-left: -30px !important;
+    top: -5px !important;
+    font-size: 82px !important;
+    margin-left: -46px !important;
   }
 }
 @media screen and (max-width: 582px) {
@@ -484,14 +486,17 @@ body {
     height: 250px !important;
   }
   header .countdown span {
-    top: -7px !important;
-    font-size: 49px !important;
-    margin-left: -50px !important;
+    top: -3px !important;
+    font-size: 57px !important;
+    margin-left: -46px !important;
   }
   header small {
-    padding-inline-end: 50px !important;
+    padding-inline-end: 0 !important;
     bottom: 150px !important;
     font-size: 12px !important;
+  }
+  .time small {
+    left: 0 !important;
   }
 }
 @media screen and (max-width: 482px) {
@@ -517,13 +522,20 @@ body {
     padding-inline-end: 30px !important;
   }
   header .countdown {
-    font-size: calc(var(--index) * 2.4) !important;
     width: 350px !important;
     flex-wrap: wrap;
     padding-top: 10px;
     height: 150px !important;
     justify-content: center;
-    width: 260px !important;
+    width: 300px !important;
+  }
+  header .countdown h2 {
+    font-size: 58px !important;
+  }
+  header .countdown span {
+    top: -3px !important;
+    font-size: 53px !important;
+    margin-left: -39px !important;
   }
   header .time_third_child {
     margin-right: 0 !important;
@@ -537,6 +549,11 @@ body {
   }
   header .time_last_child h2 {
     margin-right: 0 !important;
+    width: 80px !important;
+    text-align: center;
+  }
+  header .time_last_child small {
+    left: 15px !important;
   }
   header small {
     bottom: 0 !important;
