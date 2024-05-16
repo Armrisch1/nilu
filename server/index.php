@@ -1,4 +1,8 @@
 <?php
+header('Access-Control-Allow-Origin: https://nilu27.com');
+header('Access-Control-Allow-Methods: POST');
+header("Access-Control-Allow-Headers: X-Requested-With");
+
 require "vendor/autoload.php";
 use PHPMailer\PHPMailer\PHPMailer;
 
