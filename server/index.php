@@ -41,7 +41,7 @@ try {
     $mail->Port       = 587;
 
     $mail->setFrom('admin@nilu27.com', "nilu27.com");
-    $mail->addAddress('info@nilu27.com');
+    $mail->addAddress('armrisch@gmail.com');
 
     // Content
     $mail->isHTML(true);
