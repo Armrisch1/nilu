@@ -15,9 +15,8 @@
 @font-face {
   font-family: "Nilu_R";
   src: url("../fonts/NiluNumbers-Regular.otf") format("opentype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
+  font-weight: normal !important;
+  font-style: normal !important;
 }
 * {
   margin: 0;
@@ -82,15 +81,6 @@ header .main_section-timer small {
   color: #fff;
   padding-inline-end: 100px;
 }
-header .main_section-timer small::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  top: -2px;
-  left: 0;
-  background-color: #fff;
-}
 header .main_section-timer .day {
   padding-inline-end: calc(var(--index) * 5) !important;
 }
@@ -106,20 +96,10 @@ header .main_section-timer .countdown {
   font-size: calc(var(--index) * 5);
   position: absolute;
   height: 280px;
-  width: calc(var(--index) * 37);
-  overflow: hidden;
+  width: max-content;
   top: 110px;
   left: 50%;
   transform: translateX(-50%);
-}
-header .main_section-timer .countdown::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  top: 10px;
-  left: 0;
-  background-color: #ffffff;
 }
 header .main_section-timer h2 {
   letter-spacing: 5px;
@@ -127,6 +107,7 @@ header .main_section-timer h2 {
   margin-inline: calc(var(--index) * 4.5);
   margin-left: 0;
   font-family: "Nilu_R";
+  font-weight: normal !important;
 }
 header .header_btn-down {
   width: 80px;
@@ -153,191 +134,21 @@ header .header_btn-down {
   object-fit: cover;
 }
 
-@media screen and (max-width: 1680px) {
-  .countdown {
-    font-size: calc(var(--index) * 4.4) !important;
-    width: calc(var(--index) * 34) !important;
-    height: 240px !important;
-  }
-  .countdown span {
-    top: -20px !important;
-    font-size: calc(var(--index) * 6.5) !important;
-  }
-  h2 {
-    letter-spacing: 5px;
-    color: #6b1a1a;
-    margin-inline: calc(var(--index) * 4.2) !important;
-    margin-left: 0 !important;
-    font-family: "Nilu_R";
-  }
-}
-@media screen and (max-width: 1440px) {
-  header .countdown {
-    font-size: calc(var(--index) * 4.2) !important;
-    width: calc(var(--index) * 33) !important;
-  }
-  header small {
-    bottom: 40px !important;
-  }
-}
-@media screen and (max-width: 1366px) {
-  header .countdown {
-    font-size: calc(var(--index) * 7) !important;
-    width: calc(var(--index) * 45) !important;
-    height: 300px !important;
-  }
-  header .countdown span {
-    top: -25px !important;
-    font-size: calc(var(--index) * 10) !important;
-  }
-  header small {
-    bottom: 0px !important;
-  }
-  header span {
-    top: -25px !important;
-    font-size: calc(var(--index) * 12) !important;
-  }
-}
-@media screen and (max-width: 1280px) {
-  header .countdown {
-    font-size: calc(var(--index) * 4.6) !important;
-    width: calc(var(--index) * 34) !important;
-    height: 220px !important;
-  }
-  header .countdown span {
-    top: -20px !important;
-    font-size: calc(var(--index) * 7) !important;
-  }
-  header small {
-    padding-inline-end: 50px !important;
-    bottom: 40px !important;
-  }
-}
-@media screen and (max-width: 1024px) {
-  header .countdown {
-    font-size: calc(var(--index) * 6.2) !important;
-    width: calc(var(--index) * 42) !important;
-    height: 250px !important;
-  }
-  header .countdown span {
-    top: -30px !important;
-    font-size: calc(var(--index) * 10) !important;
-  }
-  header small {
-    padding-inline-end: 50px !important;
-    bottom: 40px !important;
-  }
-}
-@media screen and (max-width: 860px) {
-  header .countdown {
-    font-size: calc(var(--index) * 4.4) !important;
-    width: calc(var(--index) * 34) !important;
-    height: 250px !important;
-  }
-  header .countdown span {
-    top: -20px !important;
-    font-size: calc(var(--index) * 7) !important;
-    margin-left: -60px !important;
-  }
-  header small {
-    padding-inline-end: 50px !important;
-    bottom: 100px !important;
-    font-size: 15px !important;
-  }
-  header span {
-    top: -20px !important;
-    font-size: calc(var(--index) * 5) !important;
-    margin-left: -40px !important;
-  }
-}
-@media screen and (max-width: 632px) {
-  header .countdown {
-    font-size: calc(var(--index) * 4) !important;
-    width: calc(var(--index) * 35) !important;
-    padding-left: 20px;
-    height: 250px !important;
-  }
-  header small {
-    padding-inline-end: 50px !important;
-    bottom: 120px !important;
-    font-size: 12px !important;
-  }
-  header span {
-    top: -10px !important;
-    font-size: calc(var(--index) * 4.5) !important;
-    margin-left: -30px !important;
-  }
-}
-@media screen and (max-width: 582px) {
-  header .countdown {
-    font-size: calc(var(--index) * 3.4) !important;
-    width: calc(var(--index) * 31) !important;
-    padding-left: 20px;
-    height: 250px !important;
-  }
-  header .countdown span {
-    top: -10px !important;
-    font-size: calc(var(--index) * 5) !important;
-    margin-left: -50px !important;
-  }
-  header small {
-    padding-inline-end: 50px !important;
-    bottom: 150px !important;
-    font-size: 12px !important;
-  }
-}
-@media screen and (max-width: 482px) {
-  header .countdown {
-    font-size: calc(var(--index) * 2.9) !important;
-    width: calc(var(--index) * 29) !important;
-    padding-top: 10px;
-    padding-left: 20px;
-    height: 250px !important;
-  }
-  header small {
-    padding-inline-end: 50px !important;
-    bottom: 150px !important;
-    font-size: 12px !important;
-  }
-  header span {
-    top: -10px !important;
-    font-size: calc(var(--index) * 4.5) !important;
-    margin-left: -30px !important;
-  }
-}
-@media screen and (max-width: 430px) {
-  header .main_section-timer .day {
-    padding-inline-end: 30px !important;
-  }
-  header .countdown {
-    font-size: calc(var(--index) * 2.4) !important;
-    width: calc(var(--index) * 26) !important;
-    flex-wrap: wrap;
-    padding-top: 10px;
-    padding-left: 40px;
-    height: 250px !important;
-    justify-content: center;
-  }
-  header small {
-    padding-inline-end: 30px !important;
-    bottom: 170px !important;
-    font-size: 12px !important;
-  }
-  header .sec {
-    padding-inline-end: 20px !important;
-    bottom: 50px !important;
-  }
-  header span {
-    top: 0px !important;
-    font-size: calc(var(--index) * 5) !important;
-    margin-left: -40px !important;
-  }
-  header .sec_span {
-    display: none;
-  }
-}
 body {
   background-color: #01040d;
+}
+
+.time_last_child h2 {
+  margin-right: 0 !important;
+  margin-inline: 0 !important;
+}
+
+.time {
+  position: relative;
+}
+.time small {
+  left: 8px;
+  bottom: 0 !important;
 }
 
 .form_section {
@@ -363,7 +174,7 @@ body {
   justify-content: space-between;
 }
 .form_section .form_section_container .form_section_second_container .form_section_second_container_first_inputs_box input {
-  width: 48%;
+  width: 49.4%;
 }
 .form_section .form_section_container .form_section_second_container .form_section_second_container_second_inputs_box input {
   width: 100%;
@@ -490,12 +301,72 @@ body {
   opacity: 1;
 }
 
+@media screen and (max-width: 1680px) {
+  .countdown {
+    font-size: calc(var(--index) * 4.4) !important;
+    width: calc(var(--index) * 34) !important;
+    height: 240px !important;
+  }
+  .countdown span {
+    top: -20px !important;
+    font-size: calc(var(--index) * 6.5) !important;
+  }
+  h2 {
+    letter-spacing: 5px;
+    color: #6b1a1a;
+    margin-inline: calc(var(--index) * 3.9) !important;
+    margin-left: 0 !important;
+    font-family: "Nilu_R";
+  }
+}
+@media screen and (max-width: 1440px) {
+  header .countdown {
+    font-size: calc(var(--index) * 4.2) !important;
+    width: calc(var(--index) * 33) !important;
+  }
+  header small {
+    bottom: 40px !important;
+  }
+}
+@media screen and (max-width: 1366px) {
+  header .countdown {
+    font-size: calc(var(--index) * 7) !important;
+    width: calc(var(--index) * 45) !important;
+    height: 300px !important;
+  }
+  header .countdown span {
+    top: -25px !important;
+    font-size: calc(var(--index) * 10) !important;
+  }
+  header small {
+    bottom: 0px !important;
+  }
+  header span {
+    top: -25px !important;
+    font-size: calc(var(--index) * 12) !important;
+  }
+}
+@media screen and (max-width: 1280px) {
+  header .countdown {
+    font-size: calc(var(--index) * 4.3) !important;
+    width: calc(var(--index) * 34) !important;
+    height: 220px !important;
+  }
+  header .countdown span {
+    top: -20px !important;
+    font-size: calc(var(--index) * 7) !important;
+  }
+  header small {
+    padding-inline-end: 50px !important;
+    bottom: 40px !important;
+  }
+}
 @media screen and (max-width: 1280px) {
   .form_section .form_section_container {
     max-width: 80%;
   }
   .form_section .form_section_container .form_section_second_container .form_section_second_container_first_inputs_box input {
-    width: 47%;
+    width: 49.3%;
   }
   .nilu_footer {
     max-width: 80%;
@@ -514,6 +385,43 @@ body {
   .swiper-wrapper p {
     font-size: 27px;
     width: 75%;
+  }
+}
+@media screen and (max-width: 1024px) {
+  header .countdown {
+    font-size: calc(var(--index) * 5.8) !important;
+    width: calc(var(--index) * 42) !important;
+    height: 250px !important;
+  }
+  header .countdown span {
+    top: -30px !important;
+    font-size: calc(var(--index) * 10) !important;
+  }
+  header small {
+    padding-inline-end: 50px !important;
+    bottom: 40px !important;
+  }
+}
+@media screen and (max-width: 860px) {
+  header .countdown {
+    font-size: 65px !important;
+    width: calc(var(--index) * 34) !important;
+    height: 250px !important;
+  }
+  header .countdown span {
+    top: -20px !important;
+    font-size: calc(var(--index) * 7) !important;
+    margin-left: -60px !important;
+  }
+  header small {
+    padding-inline-end: 50px !important;
+    bottom: 100px !important;
+    font-size: 15px !important;
+  }
+  header span {
+    top: -20px !important;
+    font-size: calc(var(--index) * 5) !important;
+    margin-left: -40px !important;
   }
 }
 @media screen and (max-width: 767px) {
@@ -550,6 +458,102 @@ body {
   }
   .swiper-pagination {
     margin-top: 25px;
+  }
+}
+@media screen and (max-width: 632px) {
+  header .countdown {
+    font-size: calc(var(--index) * 4) !important;
+    width: calc(var(--index) * 35) !important;
+    height: 250px !important;
+  }
+  header small {
+    padding-inline-end: 50px !important;
+    bottom: 120px !important;
+    font-size: 12px !important;
+  }
+  header span {
+    top: -10px !important;
+    font-size: calc(var(--index) * 4.5) !important;
+    margin-left: -30px !important;
+  }
+}
+@media screen and (max-width: 582px) {
+  header .countdown {
+    font-size: calc(var(--index) * 3.2) !important;
+    width: calc(var(--index) * 31) !important;
+    height: 250px !important;
+  }
+  header .countdown span {
+    top: -7px !important;
+    font-size: 49px !important;
+    margin-left: -50px !important;
+  }
+  header small {
+    padding-inline-end: 50px !important;
+    bottom: 150px !important;
+    font-size: 12px !important;
+  }
+}
+@media screen and (max-width: 482px) {
+  header .countdown {
+    font-size: calc(var(--index) * 2.9) !important;
+    width: calc(var(--index) * 29) !important;
+    padding-top: 10px;
+    height: 250px !important;
+  }
+  header small {
+    padding-inline-end: 50px !important;
+    bottom: 150px !important;
+    font-size: 12px !important;
+  }
+  header span {
+    top: -10px !important;
+    font-size: calc(var(--index) * 4.5) !important;
+    margin-left: -30px !important;
+  }
+}
+@media screen and (max-width: 430px) {
+  header .main_section-timer .day {
+    padding-inline-end: 30px !important;
+  }
+  header .countdown {
+    font-size: calc(var(--index) * 2.4) !important;
+    width: 350px !important;
+    flex-wrap: wrap;
+    padding-top: 10px;
+    height: 150px !important;
+    justify-content: center;
+    width: 260px !important;
+  }
+  header .time_third_child {
+    margin-right: 0 !important;
+  }
+  header .time_third_child h2 {
+    margin-right: 0 !important;
+    margin-inline: 0 !important;
+  }
+  header .time_last_child {
+    margin-right: 0 !important;
+  }
+  header .time_last_child h2 {
+    margin-right: 0 !important;
+  }
+  header small {
+    bottom: 0 !important;
+    left: 0 !important;
+    font-size: 10px !important;
+  }
+  header .sec {
+    padding-inline-end: 20px !important;
+    bottom: 0 !important;
+  }
+  header span {
+    top: 0px !important;
+    font-size: calc(var(--index) * 5) !important;
+    margin-left: -40px !important;
+  }
+  header .sec_span {
+    display: none;
   }
 }
 

@@ -4,6 +4,10 @@ const swiper = new Swiper('.swiper-container', {
         el: '.swiper-pagination',
         clickable: true
     },
+    autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+    },
     navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
@@ -17,11 +21,17 @@ video.classList.add("main_section-video")
 
 function setVideoSource() {
     if (window.matchMedia("(max-width: 375px)").matches) {
-        video.setAttribute("src", "assets/videos/13 375x667/375x667_mq.mp4")
+        video.setAttribute("src", "assets/videos/750x1334_mq.mp4")
+        video.parentElement.style.width = '375px';
+        video.parentElement.style.height = '667px';
     } else if (window.matchMedia("(max-width: 430px)").matches) {
-        video.setAttribute("src", "assets/videos/12 430x932 (temporary)/430х932_mq_temporary.mp4")
+        video.setAttribute("src", "assets/videos/860x1864_mq.mp4")
+        video.parentElement.style.width = '430px';
+        video.parentElement.style.height = '932px';
     } else if (window.matchMedia("(max-width: 632px)").matches) {
-        video.setAttribute("src", "assets/videos/11 632x800/632x800_mq.mp4")
+        video.setAttribute("src", "assets/videos/1264x1600_mq.mp4")
+        video.parentElement.style.width = '632px';
+        video.parentElement.style.height = '800px';
     } else if (window.matchMedia("(max-width: 750px)").matches) {
         video.setAttribute("src", "assets/videos/750x1334_mq.mp4")
     } else if (window.matchMedia("(max-width: 860px)").matches) {
