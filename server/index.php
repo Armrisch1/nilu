@@ -1,18 +1,25 @@
 <?php
 $allowed_domains = ['https://nilu27.com'];
 
-// Check if the Origin header is set and is in the list of allowed domains
-if (isset($_SERVER['HTTP_ORIGIN']) && in_array($_SERVER['HTTP_ORIGIN'], $allowed_domains)) {
-    header('Access-Control-Allow-Origin: ' . $_SERVER['HTTP_ORIGIN']);
-    header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
-    header('Access-Control-Allow-Headers: X-Requested-With, Content-Type');
-    header('Access-Control-Allow-Credentials: true');
+if(isset($_SERVER["HTTP_ORIGIN"])) {
+    header("Access-Control-Allow-Origin: {$_SERVER['HTTP_ORIGIN']}");
+} else {
+    header("Access-Control-Allow-Origin: *");
 }
 
-// Handle preflight requests (OPTIONS method)
-if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
-    http_response_code(200);
-    exit();
+header("Access-Control-Allow-Credentials: true");
+header("Access-Control-Max-Age: 600");
+
+if($_SERVER["REQUEST_METHOD"] == "OPTIONS")
+{
+    if (isset($_SERVER["HTTP_ACCESS_CONTROL_REQUEST_METHOD"]))
+        header("Access-Control-Allow-Methods: POST, GET, OPTIONS, DELETE, PUT"); //Make sure you remove those you do not want to support
+
+    if (isset($_SERVER["HTTP_ACCESS_CONTROL_REQUEST_HEADERS"]))
+        header("Access-Control-Allow-Headers: {$_SERVER['HTTP_ACCESS_CONTROL_REQUEST_HEADERS']}");
+
+    //Just exit with 200 OK with the above headers for OPTIONS method
+    exit(0);
 }
 
 require "vendor/autoload.php";
