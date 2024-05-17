@@ -711,3 +711,28 @@ body {
     }
   }
 }
+
+@media screen and (max-width: 390px) {
+  header {
+    .main_section-text-info {
+      top: 78px!important;
+    }
+    .countdown {
+      //font-size: calc(var(--index) * 2.4) !important;
+      width: 350px !important;
+      flex-wrap: wrap;
+      padding-top: 10px;
+      height: 150px !important;
+      justify-content: center;
+      top: 95px!important;
+      //width: 300px!important;
+
+      h2 {
+        font-size: 92px !important;
+        margin-inline: 5px !important;
+        position: relative;
+        top: -7px;
+      }
+    }
+  }
+}

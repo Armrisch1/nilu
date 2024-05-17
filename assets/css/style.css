@@ -584,5 +584,24 @@ body {
     display: none;
   }
 }
+@media screen and (max-width: 390px) {
+  header .main_section-text-info {
+    top: 78px !important;
+  }
+  header .countdown {
+    width: 350px !important;
+    flex-wrap: wrap;
+    padding-top: 10px;
+    height: 150px !important;
+    justify-content: center;
+    top: 95px !important;
+  }
+  header .countdown h2 {
+    font-size: 92px !important;
+    margin-inline: 5px !important;
+    position: relative;
+    top: -7px;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */
