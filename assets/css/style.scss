@@ -652,13 +652,13 @@ body {
       //font-size: calc(var(--index) * 2.4) !important;
       width: 350px !important;
       flex-wrap: wrap;
-      padding-top: 10px;
+      padding-top: 0!important;
       height: 150px !important;
       justify-content: center;
       //width: 300px!important;
 
       h2 {
-        font-size: 111px !important;
+        font-size: 105px !important;
         margin-inline: 5px !important;
       }
 
@@ -671,6 +671,7 @@ body {
       small {
         padding-inline-end: 0!important;
         left: 7px !important;
+        bottom: 12px !important;
       }
     }
 
@@ -679,6 +680,9 @@ body {
     }
 
     .time_last_child {
+      position: relative;
+      top: -16px;
+
       h2 {
         margin-right: 0!important;
         margin-left: 0!important;
@@ -731,7 +735,7 @@ body {
       padding-top: 10px;
       height: 150px !important;
       justify-content: center;
-      top: 95px!important;
+      top: 106px !important;
       //width: 300px!important;
 
       h2 {
@@ -744,27 +748,29 @@ body {
   }
 }
 
+@supports (-webkit-touch-callout: none) {
+  @media screen and (max-height: 900px) {
+    header {
+      .time_last_child {
+        position: relative;
+        top: -26px;
+      }
 
-@media screen and (max-height: 800px) {
-  header {
-    .time_last_child {
-      position: relative;
-      top: -26px;
-    }
+      //.main_section-text-info {
+      //  top: 90px !important;
+      //}
 
-    //.main_section-text-info {
-    //  top: 90px !important;
-    //}
+      .main_section-timer {
+        .countdown {
+          padding-top: 0!important;
+          top: 95px!important;
 
-    .main_section-timer {
-      .countdown {
-        padding-top: 0!important;
-        top: 95px!important;
-
-        h2 {
-          font-size: 90px !important;
+          h2 {
+            font-size: 90px !important;
+          }
         }
       }
     }
   }
 }
+

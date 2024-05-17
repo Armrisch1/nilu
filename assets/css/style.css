@@ -534,12 +534,12 @@ body {
   header .countdown {
     width: 350px !important;
     flex-wrap: wrap;
-    padding-top: 10px;
+    padding-top: 0 !important;
     height: 150px !important;
     justify-content: center;
   }
   header .countdown h2 {
-    font-size: 111px !important;
+    font-size: 105px !important;
     margin-inline: 5px !important;
   }
   header .countdown span {
@@ -550,11 +550,14 @@ body {
   header .countdown small {
     padding-inline-end: 0 !important;
     left: 7px !important;
+    bottom: 12px !important;
   }
   header .time_third_child {
     margin-left: 5px !important;
   }
   header .time_last_child {
+    position: relative;
+    top: -16px;
     margin-right: 0 !important;
   }
   header .time_last_child h2 {
@@ -597,7 +600,7 @@ body {
     padding-top: 10px;
     height: 150px !important;
     justify-content: center;
-    top: 95px !important;
+    top: 106px !important;
   }
   header .countdown h2 {
     font-size: 92px !important;
@@ -606,17 +609,19 @@ body {
     top: -7px;
   }
 }
-@media screen and (max-height: 800px) {
-  header .time_last_child {
-    position: relative;
-    top: -26px;
-  }
-  header .main_section-timer .countdown {
-    padding-top: 0 !important;
-    top: 95px !important;
-  }
-  header .main_section-timer .countdown h2 {
-    font-size: 90px !important;
+@supports (-webkit-touch-callout: none) {
+  @media screen and (max-height: 900px) {
+    header .time_last_child {
+      position: relative;
+      top: -26px;
+    }
+    header .main_section-timer .countdown {
+      padding-top: 0 !important;
+      top: 95px !important;
+    }
+    header .main_section-timer .countdown h2 {
+      font-size: 90px !important;
+    }
   }
 }
 
