@@ -609,7 +609,14 @@ body {
 @media screen and (max-height: 800px) {
   header .time_last_child {
     position: relative;
-    top: -20px;
+    top: -26px;
+  }
+  header .main_section-timer .countdown {
+    padding-top: 0 !important;
+    top: 95px !important;
+  }
+  header .main_section-timer .countdown h2 {
+    font-size: 90px !important;
   }
 }
 

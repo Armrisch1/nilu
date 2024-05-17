@@ -749,7 +749,22 @@ body {
   header {
     .time_last_child {
       position: relative;
-      top: -20px;
+      top: -26px;
+    }
+
+    //.main_section-text-info {
+    //  top: 90px !important;
+    //}
+
+    .main_section-timer {
+      .countdown {
+        padding-top: 0!important;
+        top: 95px!important;
+
+        h2 {
+          font-size: 90px !important;
+        }
+      }
     }
   }
 }
