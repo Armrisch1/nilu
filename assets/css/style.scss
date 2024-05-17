@@ -717,6 +717,13 @@ body {
     .main_section-text-info {
       top: 78px!important;
     }
+
+    .time_last_child {
+      small {
+        left: 18px!important;
+      }
+    }
+
     .countdown {
       //font-size: calc(var(--index) * 2.4) !important;
       width: 350px !important;

@@ -588,6 +588,9 @@ body {
   header .main_section-text-info {
     top: 78px !important;
   }
+  header .time_last_child small {
+    left: 18px !important;
+  }
   header .countdown {
     width: 350px !important;
     flex-wrap: wrap;
