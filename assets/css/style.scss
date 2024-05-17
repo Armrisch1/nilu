@@ -743,3 +743,13 @@ body {
     }
   }
 }
+
+
+@media screen and (max-height: 800px) {
+  header {
+    .time_last_child {
+      position: relative;
+      top: -20px;
+    }
+  }
+}
