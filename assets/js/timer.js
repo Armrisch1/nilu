@@ -6,7 +6,7 @@ const seconds = document.querySelector('#seconds');
 
 // Calculations
 const currentYear = new Date().getFullYear(); // 2020
-const nextYear = new Date(`August 15 ${currentYear} 15:00:00`);
+const targetDate = new Date('August 15, 2024 15:00:00 GMT-0700');
 
 // Set year
 year.innerText = currentYear + 1;
@@ -18,7 +18,7 @@ year.innerText = currentYear + 1;
  * */
 function updateCounter() {
 	const currentTime = new Date();
-	const diff = nextYear - currentTime;
+	const diff = targetDate - currentTime;
 
 	const daysLeft = Math.floor(diff / 1000 / 60 / 60 / 24);
 	const hoursLeft = Math.floor(diff / 1000 / 60 / 60) % 24;

@@ -14,7 +14,7 @@
 }
 @font-face {
   font-family: "Nilu_R";
-  src: url("../fonts/NiluNumbersM-Regular.otf") format("opentype");
+  src: url("../fonts/NiluNumbersM2-Regular.otf") format("opentype");
   font-weight: normal !important;
   font-style: normal !important;
 }
@@ -425,6 +425,9 @@ body {
     font-size: calc(var(--index) * 5) !important;
     margin-left: -40px !important;
   }
+  header .main_section-logo {
+    width: 98px !important;
+  }
 }
 @media screen and (max-width: 767px) {
   .form_section .form_section_container {
@@ -478,6 +481,9 @@ body {
     font-size: 82px !important;
     margin-left: -46px !important;
   }
+  .main_section-text-info {
+    font-size: 12px !important;
+  }
 }
 @media screen and (max-width: 582px) {
   header .countdown {
@@ -518,8 +524,12 @@ body {
   }
 }
 @media screen and (max-width: 430px) {
+  header .main_section-text-info {
+    width: 257px !important;
+    top: 85px !important;
+  }
   header .main_section-timer .day {
-    padding-inline-end: 30px !important;
+    padding-inline-end: 0 !important;
   }
   header .countdown {
     width: 350px !important;
@@ -527,33 +537,34 @@ body {
     padding-top: 10px;
     height: 150px !important;
     justify-content: center;
-    width: 300px !important;
   }
   header .countdown h2 {
-    font-size: 58px !important;
+    font-size: 111px !important;
+    margin-inline: 5px !important;
   }
   header .countdown span {
     top: -3px !important;
     font-size: 53px !important;
     margin-left: -39px !important;
   }
-  header .time_third_child {
-    margin-right: 0 !important;
+  header .countdown small {
+    padding-inline-end: 0 !important;
+    left: 7px !important;
   }
-  header .time_third_child h2 {
-    margin-right: 0 !important;
-    margin-inline: 0 !important;
+  header .time_third_child {
+    margin-left: 5px !important;
   }
   header .time_last_child {
     margin-right: 0 !important;
   }
   header .time_last_child h2 {
     margin-right: 0 !important;
-    width: 80px !important;
+    margin-left: 0 !important;
+    width: 105px !important;
     text-align: center;
   }
   header .time_last_child small {
-    left: 15px !important;
+    left: 6px !important;
   }
   header small {
     bottom: 0 !important;

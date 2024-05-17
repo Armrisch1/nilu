@@ -16,7 +16,7 @@
 
 @font-face {
   font-family: "Nilu_R";
-  src: url("../fonts/NiluNumbersM-Regular.otf") format("opentype");
+  src: url("../fonts/NiluNumbersM2-Regular.otf") format("opentype");
   font-weight: normal!important;
   font-style: normal!important;
 }
@@ -507,6 +507,9 @@ body {
       margin-left: -40px !important;
     }
 
+    .main_section-logo {
+      width: 98px!important;
+    }
   }
 }
 
@@ -581,6 +584,10 @@ body {
     }
 
   }
+
+  .main_section-text-info {
+    font-size: 12px!important;
+  }
 }
 
 @media screen and (max-width: 582px) {
@@ -616,7 +623,6 @@ body {
       width: calc(var(--index) * 29) !important;
       padding-top: 10px;
       height: 250px !important;
-
     }
     small {
       padding-inline-end: 50px !important;
@@ -633,9 +639,13 @@ body {
 
 @media screen and (max-width: 430px) {
   header {
+    .main_section-text-info {
+      width: 257px!important;
+      top: 85px!important;
+    }
     .main_section-timer {
       .day {
-        padding-inline-end: 30px !important;
+        padding-inline-end: 0 !important;
       }
     }
     .countdown {
@@ -645,10 +655,11 @@ body {
       padding-top: 10px;
       height: 150px !important;
       justify-content: center;
-      width: 300px!important;
+      //width: 300px!important;
 
       h2 {
-        font-size: 58px!important;
+        font-size: 111px !important;
+        margin-inline: 5px !important;
       }
 
       span {
@@ -656,24 +667,28 @@ body {
         font-size: 53px !important;
         margin-left: -39px !important;
       }
-    }
-    .time_third_child {
-      h2 {
-        margin-right: 0!important;
-        margin-inline: 0!important;
+
+      small {
+        padding-inline-end: 0!important;
+        left: 7px !important;
       }
-      margin-right: 0!important;
     }
+
+    .time_third_child {
+      margin-left: 5px!important;
+    }
+
     .time_last_child {
       h2 {
         margin-right: 0!important;
-        width: 80px!important;
+        margin-left: 0!important;
+        width: 105px!important;
         text-align: center;
       }
       margin-right: 0!important;
 
       small {
-        left: 15px!important;
+        left: 6px!important;
       }
     }
 
